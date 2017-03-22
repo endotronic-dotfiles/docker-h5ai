@@ -86,7 +86,7 @@
     - interval: number, update interval in milliseconds, at least 1000
     */
     "autorefresh": {
-        "enabled": false,
+        "enabled": true,
         "interval": 5000
     },
 
@@ -94,7 +94,7 @@
     Enable a context menu (right-click) on some elements.
     */
     "contextmenu": {
-        "enabled": false
+        "enabled": true
     },
 
     /*
