@@ -29,5 +29,10 @@ COPY class-setup.patch /usr/src/class-setup.patch
 RUN patch -p1 /var/www/html/_h5ai/private/php/core/class-setup.php /usr/src/class-setup.patch
 COPY h5ai.conf /etc/apache2/conf-enabled/h5ai.conf
 COPY options.json /var/www/html/_h5ai/private/conf/options.json
+COPY .htaccess /var/www/html/_h5ai/public/.htaccess
 RUN chown www-data:www-data /var/www/html/_h5ai/private/cache
 RUN chown www-data:www-data /var/www/html/_h5ai/public/cache
+COPY docker-php-entrypoint /usr/local/bin
+RUN chmod +x /usr/local/bin/docker-php-entrypoint
+
+VOLUME /data
